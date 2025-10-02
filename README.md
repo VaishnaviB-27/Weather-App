@@ -1,5 +1,4 @@
-Weather App
-A simple weather application that shows current weather information for any city using OpenWeatherMap API.
+Weather App- A simple weather Station that shows current weather information for any city using OpenWeatherMap API.
 I built this project to practice working with APIs and handling asynchronous JavaScript. It fetches real-time weather data and displays temperature, wind speed, and weather conditions.
 Features:
 
