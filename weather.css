@@ -1,0 +1,161 @@
+/*
+====================================
+  Global Reset & Typography
+====================================
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Sleek, dark background for a modern look */
+    background: linear-gradient(135deg, #1f1c2c 0%, #2a2c37 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif; /* A clean, modern font */
+    color: #f0f0f0; /* Light text for dark background */
+}
+
+/*
+====================================
+  Main Weather Container Styling
+====================================
+*/
+.weather-container {
+    width: 90%;
+    max-width: 400px; /* Increased max-width slightly for better space */
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    
+    /* Modern Card Effect: Frosted Glass / Glassmorphism */
+    background: rgba(42, 44, 55, 0.7); /* Semi-transparent dark background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Prominent shadow for depth */
+
+    /* Animation */
+    transform: scale(0.95);
+    opacity: 0;
+    animation: fadeInScale 0.8s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Header Styling */
+.weather-container h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #8cafff; /* A light blue accent for the title */
+    letter-spacing: 1px;
+}
+
+/*
+====================================
+  Input & Button Styling
+====================================
+*/
+#cityName {
+    width: 100%;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #3a3f50; /* Slightly lighter dark color for the input field */
+    color: #f0f0f0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#cityName::placeholder {
+    color: #b0b0b0;
+}
+
+#cityName:focus {
+    box-shadow: 0 0 0 3px #8cafff; /* Blue glow on focus */
+    background: #42475a;
+}
+
+#weather-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #8cafff; /* Vibrant accent color for the button */
+    color: #1f1c2c;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(140, 175, 255, 0.4);
+}
+
+#weather-btn:hover {
+    background: #6a95ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(140, 175, 255, 0.6);
+}
+
+#weather-btn:active {
+    transform: translateY(0);
+}
+
+/*
+====================================
+  Weather Data Display
+====================================
+*/
+.weather-data {
+    margin-top: 30px;
+    padding: 20px 15px;
+    border-radius: 10px;
+    background: rgba(42, 44, 55, 0.9); /* Slightly darker background for data section */
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.weather-data h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #8cafff;
+}
+
+.weather-data p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    margin: 5px 0;
+}
+
+/* Specific styling for the temperature line to make it stand out */
+.weather-data p:nth-child(2) {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 15px 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Error/Initial message styling */
+.weather-data p:first-child {
+    font-size: 1.2rem;
+    color: #ff9999; /* Light red for error/prompt */
+    font-style: italic;
+}
